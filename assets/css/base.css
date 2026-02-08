@@ -1,0 +1,127 @@
+@import 'stats.css';
+@import 'controls.css';
+
+
+body {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-400);
+    color: var(--neutral-0);
+    background-color: var(--neutral-900);
+    font-size: var(--font-size-base);
+}
+
+.container {
+    max-width: var(--breakpoint-desktop);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    width: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.personal-best {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.personal-best__label::after {
+    content: 'Best: ';
+    color: var(--neutral-400);
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid var(--neutral-800);
+    margin: 1.25rem 0;
+}
+
+.typing-configuration {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+}
+
+#passage-container {
+    font-size: var(--font-size-xl);
+}
+
+
+
+@media (min-width: 768px) {
+    .personal-best__label::after {
+        content: 'Personal best: '  
+    }
+
+    .typing-configuration {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items:end;
+    }
+
+    
+
+    .control__button {
+        display: none;
+    }
+
+    .control__label {
+        display: block;
+    }
+
+    .controls {
+        justify-content: start;
+        width: auto;
+        gap:0;
+    }
+
+    .control:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right:0;
+        width: 1.5px;
+        height: 100%;
+        background-color: var(--neutral-800);
+    }
+
+
+    .control {
+        width: auto;
+        display: flex;
+        align-items: center;
+        padding-right: 0.75rem;
+    }
+
+    .control__difficulty, .control__mode {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .control__difficulty label, .control__mode label {
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;  
+        border: 1px solid var(--neutral-400);
+    }
+
+    .control input[type="radio"]{
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .control label:has(input[type="radio"]:checked) {
+        color: var(--blue-400);
+        border-color: var(--blue-400);
+    }
+
+    
+}

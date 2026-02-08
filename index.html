@@ -1,39 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Typing Speed Test</title>
 
-  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/variables.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/fonts.css">
 </head>
-<body>
-  <header>
 
+<body class="container">
+  <header>
+    <picture>
+      <source media="(min-width: 768px)" srcset="./assets/images/logo-large.svg">
+      <img src="./assets/images/logo-small.svg" alt="Typing Speed Test Logo" class="logo">
+    </picture>
+    <div class="personal-best">
+      <img src="./assets/images/icon-personal-best.svg" class="personal-best__icon" alt="">
+      <span class="personal-best__label"></span>
+      <span class="personal-best__value" id="pbValue">0</span>
+      <span class="personal-best__unit">WPM</span>
+    </div>
   </header>
   <main>
+    <div class="typing-configuration">
+      <section class="stats">
+        <div class="stat">
+          <span class="stat__label">WPM: </span>
+          <span class="stat__value" id="wpmValue">0</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat__label">Accuracy: </span>
+          <span class="stat__value" id="accuracyValue">100%</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat__label">Time: </span>
+          <span class="stat__value" id="timeValue">0:60</span>
+        </div>
+
+
+
+      </section>
+      <section class="controls">
+        <div class="control">
+          <span class="control__label">Difficulty: </span>
+          <button type="button" class="control__button" id="difficultyButton">
+            <span class="control__selected" id="selectedDifficulty">Hard</span>
+            <img src="./assets/images/icon-down-arrow.svg" alt="">
+          </button>
+          <div id="controlDifficulty" class="control__group" hidden>
+            <label for="easy">
+              <input type="radio" id="easy" name="difficulty" value="easy">
+              <span>Easy</span>
+            </label>
+            <label for="medium">
+              <input type="radio" id="medium" name="difficulty" value="medium">
+              <span>Medium</span>
+            </label>
+            <label for="hard">
+              <input type="radio" id="hard" name="difficulty" value="hard" checked>
+              <span>Hard</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="control">
+          <span class="control__label">Mode: </span>
+          <button type="button" class="control__button" id="modeButton">
+            <span class="control__selected" id="selectedMode">Timed (60s)</span>
+            <img src="./assets/images/icon-down-arrow.svg" alt="">
+
+          </button>
+          <div id="controlMode" class="control__group" hidden>
+            <label for="timed">
+              <input type="radio" id="timed" name="mode" value="timed" checked>
+              <span>Timed (60s)</span>
+            </label>
+            <label for="passage">
+              <input type="radio" id="passage" name="mode" value="passage">
+              <span>Passage</span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <hr class="divider">
+
+    <section class="typing-area">
+      <p id="passage-container"></p>
+    </section>
 
   </main>
   <footer>
-    
+
   </footer>
-  Personal best: <!-- PB --> WPM
 
-  WPM: <!-- WPM -->
-  Accuracy: <!-- Accuracy -->
-  Time: <!-- Time -->
 
-  Difficulty:
-  Easy
-  Medium
-  Hard
-
-  Mode:
-  Timed (60s)
-  Passage
 
   <!-- Passage -->
 
@@ -50,12 +121,15 @@
   Characters: <!-- Correct/Incorrect -->
 
   Go Again
-  
+
   <!-- Test Complete End -->
 
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
